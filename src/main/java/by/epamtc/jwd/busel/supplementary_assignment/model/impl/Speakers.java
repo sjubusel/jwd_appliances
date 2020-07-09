@@ -4,6 +4,7 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Speakers implements Appliance {
     private Type type;
@@ -61,6 +62,28 @@ public class Speakers implements Appliance {
 
     public void setCordLength(double cordLength) {
         this.cordLength = cordLength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Speakers speakers = (Speakers) o;
+        return Objects.equals(type, speakers.type)
+                && Objects.equals(frequentRange, speakers.frequentRange)
+                && (powerConsumption == speakers.powerConsumption)
+                && (numberOfSpeakers == speakers.numberOfSpeakers)
+                && (cordLength == speakers.cordLength);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, powerConsumption, numberOfSpeakers,
+                frequentRange, cordLength);
     }
 
     @Override

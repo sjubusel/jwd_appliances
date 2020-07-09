@@ -86,10 +86,10 @@ public class TabletPc implements Appliance {
         TabletPc tabletPc = (TabletPc) o;
         return Objects.equals(type, tabletPc.type)
                 && Objects.equals(color, tabletPc.color)
-                && batteryCapacity == tabletPc.batteryCapacity
-                && displayInches == tabletPc.displayInches
-                && memoryRom == tabletPc.memoryRom
-                && flashMemoryCapacity == tabletPc.flashMemoryCapacity;
+                && (batteryCapacity == tabletPc.batteryCapacity)
+                && (displayInches == tabletPc.displayInches)
+                && (memoryRom == tabletPc.memoryRom)
+                && (flashMemoryCapacity == tabletPc.flashMemoryCapacity);
     }
 
     @Override
