@@ -1,4 +1,7 @@
-package by.epamtc.jwd.busel.supplementary_assignment.model;
+package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
+
+import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
+import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
 
