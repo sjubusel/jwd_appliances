@@ -14,7 +14,7 @@ public class Main {
         String inputParameterValue = "60";
 
         Finder finder = new Finder();
-        List<Appliance> appliances = finder.fetchAppliances(inputType,
+        List<Appliance> appliances = finder.findAppliances(inputType,
                 inputParameterKey, inputParameterValue);
 
         Printer printer = new Printer();
