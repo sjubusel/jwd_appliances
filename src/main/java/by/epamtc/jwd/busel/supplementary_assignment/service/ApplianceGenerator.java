@@ -6,9 +6,9 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 
 import java.util.List;
 
-public class ApplianceFactory {
+public class ApplianceGenerator {
 
-    public static Appliance create(Appliance.Type type,
+    public static Appliance generateAppliance(Appliance.Type type,
             List<String> parameters) {
         ApplianceCreator creator;
         switch (type) {

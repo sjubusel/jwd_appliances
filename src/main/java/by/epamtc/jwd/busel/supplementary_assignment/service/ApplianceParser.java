@@ -18,6 +18,6 @@ public class ApplianceParser {
             int delimiterIndex = pair.indexOf(PARAMETER_DELIMITER);
             parameters.add(pair.substring(delimiterIndex + 1));
         }
-        return ApplianceFactory.create(type, parameters);
+        return ApplianceGenerator.generateAppliance(type, parameters);
     }
 }
