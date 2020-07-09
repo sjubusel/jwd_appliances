@@ -4,6 +4,7 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Laptop implements Appliance {
     private Type type;
@@ -83,6 +84,30 @@ public class Laptop implements Appliance {
 
     public void setDisplayInches(double displayInches) {
         this.displayInches = displayInches;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Laptop laptop = (Laptop) o;
+        return Objects.equals(type, laptop.type)
+                && Objects.equals(operatingSystem, laptop.operatingSystem)
+                && batteryCapacity == laptop.batteryCapacity
+                && memoryRom == laptop.memoryRom
+                && systemMemory == laptop.systemMemory
+                && cpu == laptop.cpu
+                && displayInches == laptop.displayInches;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, batteryCapacity, operatingSystem, memoryRom,
+                systemMemory, cpu, displayInches);
     }
 
     @Override
