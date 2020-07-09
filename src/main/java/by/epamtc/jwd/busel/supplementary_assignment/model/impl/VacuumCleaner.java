@@ -4,6 +4,7 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class VacuumCleaner implements Appliance {
     private Type type;
@@ -82,6 +83,30 @@ public class VacuumCleaner implements Appliance {
 
     public void setCleaningWidth(double cleaningWidth) {
         this.cleaningWidth = cleaningWidth;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        VacuumCleaner cleaner = (VacuumCleaner) o;
+        return Objects.equals(type, cleaner.type)
+                && Objects.equals(filterType, cleaner.filterType)
+                && Objects.equals(bagType, cleaner.bagType)
+                && Objects.equals(wandType, cleaner.wandType)
+                && (powerConsumption == cleaner.powerConsumption)
+                && (motorSpeedRegulation == cleaner.motorSpeedRegulation)
+                && (cleaningWidth == cleaner.cleaningWidth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, powerConsumption, filterType, bagType,
+                wandType, motorSpeedRegulation, cleaningWidth);
     }
 
     @Override
