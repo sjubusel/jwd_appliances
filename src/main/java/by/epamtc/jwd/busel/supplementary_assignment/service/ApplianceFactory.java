@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.service;
 import by.epamtc.jwd.busel.supplementary_assignment.model.*;
 
 import java.util.HashMap;
-import java.util.NoSuchElementException;
 
 public class ApplianceFactory {
 
@@ -23,7 +22,8 @@ public class ApplianceFactory {
             case SPEAKERS:
                 return new Speakers(type, parameters);
             default:
-                throw new NoSuchElementException(type.toString());
+                throw new RuntimeException("WRONG APPLIANCE TYPE PASSED"
+                        + type.toString());
         }
     }
 }
