@@ -15,6 +15,19 @@ public class Laptop implements Appliance {
     private double cpu;
     private double displayInches;
 
+    public Laptop(Type type, double batteryCapacity, String operatingSystem,
+            double memoryRom, double systemMemory, double cpu,
+            double displayInches) {
+        this.type = type;
+        this.batteryCapacity = batteryCapacity;
+        this.operatingSystem = operatingSystem;
+        this.memoryRom = memoryRom;
+        this.systemMemory = systemMemory;
+        this.cpu = cpu;
+        this.displayInches = displayInches;
+    }
+
+    //TODO: delete me after Factory Pattern implemented
     public Laptop(Type type, HashMap<String, String> parameters) {
         this.type = type;
         String bCap = parameters.get(Parameter.LAPTOP_BATTERY_CAPACITY);

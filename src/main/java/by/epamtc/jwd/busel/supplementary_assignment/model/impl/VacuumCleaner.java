@@ -15,7 +15,19 @@ public class VacuumCleaner implements Appliance {
     private double motorSpeedRegulation;
     private double cleaningWidth;
 
+    public VacuumCleaner(Type type, double powerConsumption, String filterType,
+            String bagType, String wandType, double motorSpeedRegulation,
+            double cleaningWidth) {
+        this.type = type;
+        this.powerConsumption = powerConsumption;
+        this.filterType = filterType;
+        this.bagType = bagType;
+        this.wandType = wandType;
+        this.motorSpeedRegulation = motorSpeedRegulation;
+        this.cleaningWidth = cleaningWidth;
+    }
 
+    //TODO: delete me after Factory Pattern implemented
     public VacuumCleaner(Type type, HashMap<String, String> parameters) {
         this.type = type;
         String cons = parameters.get(Parameter.VACUUM_CLEANER_POWER_CONSUMPTION);

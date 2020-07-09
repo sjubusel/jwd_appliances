@@ -15,6 +15,19 @@ public class Refrigerator implements Appliance {
     private double height;
     private double width;
 
+    public Refrigerator(Type type, double powerConsumption, double weight,
+            double freezerCapacity, double overallCapacity, double height,
+            double width) {
+        this.type = type;
+        this.powerConsumption = powerConsumption;
+        this.weight = weight;
+        this.freezerCapacity = freezerCapacity;
+        this.overallCapacity = overallCapacity;
+        this.height = height;
+        this.width = width;
+    }
+
+    //TODO: delete me after Factory Pattern implemented
     public Refrigerator(Type type, HashMap<String, String> parameters) {
         this.type = type;
         String cons = parameters.get(Parameter.REFRIGERATOR_POWER_CONSUMPTION);

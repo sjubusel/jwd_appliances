@@ -13,6 +13,16 @@ public class Speakers implements Appliance {
     private String frequentRange;
     private double cordLength;
 
+    public Speakers(Type type, double powerConsumption, int numberOfSpeakers,
+            String frequentRange, double cordLength) {
+        this.type = type;
+        this.powerConsumption = powerConsumption;
+        this.numberOfSpeakers = numberOfSpeakers;
+        this.frequentRange = frequentRange;
+        this.cordLength = cordLength;
+    }
+
+    //TODO: delete me after Factory Pattern implemented
     public Speakers(Type type, HashMap<String, String> parameters) {
         this.type = type;
         String cons = parameters.get(Parameter.SPEAKERS_POWER_CONSUMPTION);

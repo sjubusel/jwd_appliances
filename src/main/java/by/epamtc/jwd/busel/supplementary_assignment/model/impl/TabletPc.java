@@ -14,6 +14,17 @@ public class TabletPc implements Appliance {
     private double flashMemoryCapacity;
     private String color;
 
+    public TabletPc(Type type, double batteryCapacity, double displayInches,
+            double memoryRom, double flashMemoryCapacity, String color) {
+        this.type = type;
+        this.batteryCapacity = batteryCapacity;
+        this.displayInches = displayInches;
+        this.memoryRom = memoryRom;
+        this.flashMemoryCapacity = flashMemoryCapacity;
+        this.color = color;
+    }
+
+    //TODO: delete me after Factory Pattern implemented
     public TabletPc(Type type, HashMap<String, String> parameters) {
         this.type = type;
         final String cap = parameters.get(Parameter.TABLET_PC_BATTERY_CAPACITY);

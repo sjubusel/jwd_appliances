@@ -15,6 +15,18 @@ public class Oven implements Appliance {
     private double height;
     private double width;
 
+    public Oven(Type type, double powerConsumption, double weight,
+            double capacity, double depth, double height, double width) {
+        this.type = type;
+        this.powerConsumption = powerConsumption;
+        this.weight = weight;
+        this.capacity = capacity;
+        this.depth = depth;
+        this.height = height;
+        this.width = width;
+    }
+
+    //TODO: delete me after Factory Pattern implemented
     public Oven(Type type, HashMap<String, String> parameters) {
         this.type = type;
         String pCons = parameters.get(Parameter.OVEN_POWER_CONSUMPTION);
