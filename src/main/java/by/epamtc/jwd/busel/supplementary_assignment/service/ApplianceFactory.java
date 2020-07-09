@@ -1,6 +1,7 @@
 package by.epamtc.jwd.busel.supplementary_assignment.service;
 
 import by.epamtc.jwd.busel.supplementary_assignment.model.*;
+import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Oven;
 
 import java.util.HashMap;
 
