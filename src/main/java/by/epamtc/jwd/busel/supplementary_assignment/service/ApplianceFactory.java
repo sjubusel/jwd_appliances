@@ -1,35 +1,40 @@
 package by.epamtc.jwd.busel.supplementary_assignment.service;
 
+import by.epamtc.jwd.busel.supplementary_assignment.factory.ApplianceCreator;
+import by.epamtc.jwd.busel.supplementary_assignment.factory.impl.*;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Refrigerator;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Speakers;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.TabletPc;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.VacuumCleaner;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Laptop;
-import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Oven;
 
-import java.util.HashMap;
+import java.util.List;
 
 public class ApplianceFactory {
 
     public static Appliance create(Appliance.Type type,
-            HashMap<String, String> parameters) {
+            List<String> parameters) {
+        ApplianceCreator creator;
         switch (type) {
             case OVEN:
-                return new Oven(type, parameters);
+                creator = new OvenCreator();
+                break;
             case LAPTOP:
-                return new Laptop(type, parameters);
+                creator = new LaptopCreator();
+                break;
             case REFRIGERATOR:
-                return new Refrigerator(type, parameters);
+                creator = new RefrigeratorCreator();
+                break;
             case VACUUM_CLEANER:
-                return new VacuumCleaner(type, parameters);
+                creator = new VacuumCleanerCreator();
+                break;
             case TABLET_PC:
-                return new TabletPc(type, parameters);
+                creator = new TabletPcCreator();
+                break;
             case SPEAKERS:
-                return new Speakers(type, parameters);
+                creator = new SpeakersCreator();
+                break;
             default:
                 throw new RuntimeException("WRONG APPLIANCE TYPE PASSED"
                         + type.toString());
         }
+        return creator.createAppliance(parameters);
     }
+
 }
