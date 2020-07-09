@@ -97,11 +97,11 @@ public class Laptop implements Appliance {
         Laptop laptop = (Laptop) o;
         return Objects.equals(type, laptop.type)
                 && Objects.equals(operatingSystem, laptop.operatingSystem)
-                && batteryCapacity == laptop.batteryCapacity
-                && memoryRom == laptop.memoryRom
-                && systemMemory == laptop.systemMemory
-                && cpu == laptop.cpu
-                && displayInches == laptop.displayInches;
+                && (batteryCapacity == laptop.batteryCapacity)
+                && (memoryRom == laptop.memoryRom)
+                && (systemMemory == laptop.systemMemory)
+                && (cpu == laptop.cpu)
+                && (displayInches == laptop.displayInches);
     }
 
     @Override
