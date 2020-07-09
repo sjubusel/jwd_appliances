@@ -4,6 +4,7 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class TabletPc implements Appliance {
     private Type type;
@@ -72,6 +73,29 @@ public class TabletPc implements Appliance {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TabletPc tabletPc = (TabletPc) o;
+        return Objects.equals(type, tabletPc.type)
+                && Objects.equals(color, tabletPc.color)
+                && batteryCapacity == tabletPc.batteryCapacity
+                && displayInches == tabletPc.displayInches
+                && memoryRom == tabletPc.memoryRom
+                && flashMemoryCapacity == tabletPc.flashMemoryCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, batteryCapacity, displayInches, memoryRom,
+                flashMemoryCapacity, color);
     }
 
     @Override
