@@ -4,6 +4,7 @@ import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Oven implements Appliance {
     private Type type;
@@ -84,6 +85,30 @@ public class Oven implements Appliance {
 
     public void setWidth(double width) {
         this.width = width;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Oven oven = (Oven) o;
+        return Objects.equals(type, oven.type)
+                && (powerConsumption == oven.powerConsumption)
+                && (weight == oven.weight)
+                && (capacity == oven.capacity)
+                && (depth == oven.depth)
+                && (height == oven.height)
+                && (width == oven.width);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, powerConsumption, weight, capacity, depth,
+                height, width);
     }
 
     @Override
