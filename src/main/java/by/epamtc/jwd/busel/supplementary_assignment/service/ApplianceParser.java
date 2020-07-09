@@ -9,7 +9,7 @@ public class ApplianceParser {
     private static final String PARAMETER_PAIRS_DELIMITER = ", ";
     private static final String PARAMETER_DELIMITER = "=";
 
-    public Appliance generateAppliance(String line, Appliance.Type type) {
+    public Appliance parseAppliance(String line, Appliance.Type type) {
         int typePlusDelimiterOffset = type.getName().length() + 3;
         String[] paramPairs = line.substring(typePlusDelimiterOffset)
                 .split(PARAMETER_PAIRS_DELIMITER);

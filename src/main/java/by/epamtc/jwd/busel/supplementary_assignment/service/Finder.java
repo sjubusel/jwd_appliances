@@ -24,7 +24,7 @@ public class Finder {
             while (reader.ready()) {
                 String line = reader.readLine();
                 if (validator.isLineValid(line, type, matchValue)) {
-                    appliances.add(parser.generateAppliance(line, type));
+                    appliances.add(parser.parseAppliance(line, type));
                 }
             }
         } catch (IOException e) {
