@@ -2,7 +2,7 @@ package by.epamtc.jwd.busel.supplementary_assignment.service;
 
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Refrigerator;
-import by.epamtc.jwd.busel.supplementary_assignment.model.Speakers;
+import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Speakers;
 import by.epamtc.jwd.busel.supplementary_assignment.model.impl.TabletPc;
 import by.epamtc.jwd.busel.supplementary_assignment.model.impl.VacuumCleaner;
 import by.epamtc.jwd.busel.supplementary_assignment.model.impl.Laptop;
