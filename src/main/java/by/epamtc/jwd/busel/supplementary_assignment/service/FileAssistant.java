@@ -23,9 +23,8 @@ public class FileAssistant {
     private final String sourceFilePath = generateFilePath();
 
     private String generateFilePath() {
-        return System.getProperty("user.dir") + File.separator + "src" +
-                File.separator + "main" + File.separator + "resources" +
-                File.separator + sourceFileName;
+        return System.getProperty("java.class.path") + File.separator
+                + sourceFileName;
     }
 
     public String getSourceFileName() {
