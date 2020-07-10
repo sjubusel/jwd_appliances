@@ -7,9 +7,10 @@ import java.util.List;
 public class Printer {
 
     public void printResults(List<Appliance> appliances, Appliance.Type inputType,
-            String inputParameterKey, String inputParameterValue) {
-        System.out.printf("RESULTS OF QUERY (%s : %s=%s):\n", inputType,
-                inputParameterKey, inputParameterValue);
+            List<String> queryParams) {
+        System.out.printf("RESULTS OF QUERY (%s : %s):\n", inputType,
+                queryParams);
+
         if (appliances.size() > 0) {
             for (Appliance appliance : appliances) {
                 System.out.println(appliance);

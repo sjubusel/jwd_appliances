@@ -10,9 +10,9 @@ public class Finder {
     private ApplianceParser parser = new ApplianceParser();
 
     public List<Appliance> findAppliances(Appliance.Type type,
-            String parameter, String value) {
-        String matchValue = parameter + "=" + value;
-        List<String> correctRecords = selector.selectAppliances(type, matchValue);
+            List<String> queryParameters) {
+        List<String> correctRecords = selector.selectAppliances(type,
+                queryParameters);
 
         List<Appliance> appliances = new ArrayList<>();
         for (String record : correctRecords) {
