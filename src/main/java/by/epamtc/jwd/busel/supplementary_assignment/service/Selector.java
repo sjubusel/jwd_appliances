@@ -10,9 +10,9 @@ import java.util.List;
 
 public class Selector {
     private FileAssistant fileAssistant = FileAssistant.getInstance();
+    private LineValidator validator = new LineValidator();
 
     public List<String> selectAppliances(Appliance.Type type, String matchValue) {
-        LineValidator validator = new LineValidator();
         List<String> strAppliances = new ArrayList<>();
         try (FileReader in = new FileReader(fileAssistant.getSourceFilePath());
              BufferedReader reader = new BufferedReader(in)) {

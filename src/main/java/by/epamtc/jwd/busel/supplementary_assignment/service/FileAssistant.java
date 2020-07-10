@@ -28,6 +28,10 @@ public class FileAssistant {
                 File.separator + sourceFileName;
     }
 
+    public String getSourceFileName() {
+        return sourceFileName;
+    }
+
     public String getSourceFilePath() {
         return sourceFilePath;
     }
