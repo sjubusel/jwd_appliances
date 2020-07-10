@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class TabletPc implements Appliance {
@@ -22,20 +21,6 @@ public class TabletPc implements Appliance {
         this.memoryRom = memoryRom;
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public TabletPc(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        final String cap = parameters.get(Parameter.TABLET_PC_BATTERY_CAPACITY);
-        batteryCapacity = Double.parseDouble(cap);
-        String inches = parameters.get(Parameter.TABLET_PC_DISPLAY_INCHES);
-        displayInches = Double.parseDouble(inches);
-        String rom = parameters.get(Parameter.TABLET_PC_MEMORY_ROM);
-        memoryRom = Double.parseDouble(rom);
-        String flash = parameters.get(Parameter.TABLET_PC_FLASH_MEMORY_CAPACITY);
-        flashMemoryCapacity = Double.parseDouble(flash);
-        color = parameters.get(Parameter.TABLET_PC_COLOR);
     }
 
     public Type getType() {

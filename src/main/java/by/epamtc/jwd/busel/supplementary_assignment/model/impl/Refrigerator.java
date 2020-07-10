@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class Refrigerator implements Appliance {
@@ -25,23 +24,6 @@ public class Refrigerator implements Appliance {
         this.overallCapacity = overallCapacity;
         this.height = height;
         this.width = width;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public Refrigerator(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        String cons = parameters.get(Parameter.REFRIGERATOR_POWER_CONSUMPTION);
-        powerConsumption = Double.parseDouble(cons);
-        String w = parameters.get(Parameter.REFRIGERATOR_WEIGHT);
-        weight = Double.parseDouble(w);
-        String fCap = parameters.get(Parameter.REFRIGERATOR_FREEZER_CAPACITY);
-        freezerCapacity = Double.parseDouble(fCap);
-        String oCap = parameters.get(Parameter.REFRIGERATOR_OVERALL_CAPACITY);
-        overallCapacity = Double.parseDouble(oCap);
-        String h = parameters.get(Parameter.REFRIGERATOR_HEIGHT);
-        height = Double.parseDouble(h);
-        String wid = parameters.get(Parameter.REFRIGERATOR_WIDTH);
-        width = Double.parseDouble(wid);
     }
 
     public Type getType() {

@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class VacuumCleaner implements Appliance {
@@ -25,20 +24,6 @@ public class VacuumCleaner implements Appliance {
         this.wandType = wandType;
         this.motorSpeedRegulation = motorSpeedRegulation;
         this.cleaningWidth = cleaningWidth;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public VacuumCleaner(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        String cons = parameters.get(Parameter.VACUUM_CLEANER_POWER_CONSUMPTION);
-        powerConsumption = Double.parseDouble(cons);
-        filterType = parameters.get(Parameter.VACUUM_CLEANER_FILTER_TYPE);
-        bagType = parameters.get(Parameter.VACUUM_CLEANER_BAG_TYPE);
-        wandType = parameters.get(Parameter.VACUUM_CLEANER_WAND_TYPE);
-        String r = parameters.get(Parameter.VACUUM_CLEANER_MOTOR_SPEED_REGULATION);
-        motorSpeedRegulation = Double.parseDouble(r);
-        String clWid = parameters.get(Parameter.VACUUM_CLEANER_CLEANING_WIDTH);
-        cleaningWidth = Double.parseDouble(clWid);
     }
 
     public Type getType() {

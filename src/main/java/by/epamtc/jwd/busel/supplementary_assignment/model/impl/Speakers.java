@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class Speakers implements Appliance {
@@ -20,18 +19,6 @@ public class Speakers implements Appliance {
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequentRange = frequentRange;
         this.cordLength = cordLength;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public Speakers(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        String cons = parameters.get(Parameter.SPEAKERS_POWER_CONSUMPTION);
-        powerConsumption = Double.parseDouble(cons);
-        String quantity = parameters.get(Parameter.SPEAKERS_NUMBER_OF_SPEAKERS);
-        numberOfSpeakers = Integer.parseInt(quantity);
-        frequentRange = parameters.get(Parameter.SPEAKERS_FREQUENCY_RANGE);
-        String lengthOfCord = parameters.get(Parameter.SPEAKERS_CORD_LENGTH);
-        cordLength = Double.parseDouble(lengthOfCord);
     }
 
     public Type getType() {

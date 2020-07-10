@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class Laptop implements Appliance {
@@ -25,22 +24,6 @@ public class Laptop implements Appliance {
         this.systemMemory = systemMemory;
         this.cpu = cpu;
         this.displayInches = displayInches;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public Laptop(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        String bCap = parameters.get(Parameter.LAPTOP_BATTERY_CAPACITY);
-        batteryCapacity = Double.parseDouble(bCap);
-        operatingSystem = parameters.get(Parameter.LAPTOP_OS);
-        String memRom = parameters.get(Parameter.LAPTOP_MEMORY_ROM);
-        memoryRom = Double.parseDouble(memRom);
-        String sysMem = parameters.get(Parameter.LAPTOP_SYSTEM_MEMORY);
-        systemMemory = Double.parseDouble(sysMem);
-        String proc = parameters.get(Parameter.LAPTOP_CPU);
-        cpu = Double.parseDouble(proc);
-        String inches = parameters.get(Parameter.LAPTOP_DISPLAY_INCHS);
-        displayInches = Double.parseDouble(inches);
     }
 
     public Type getType() {

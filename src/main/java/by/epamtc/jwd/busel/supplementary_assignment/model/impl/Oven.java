@@ -3,7 +3,6 @@ package by.epamtc.jwd.busel.supplementary_assignment.model.impl;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Appliance;
 import by.epamtc.jwd.busel.supplementary_assignment.model.Parameter;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class Oven implements Appliance {
@@ -24,23 +23,6 @@ public class Oven implements Appliance {
         this.depth = depth;
         this.height = height;
         this.width = width;
-    }
-
-    //TODO: delete me after Factory Pattern implemented
-    public Oven(Type type, HashMap<String, String> parameters) {
-        this.type = type;
-        String pCons = parameters.get(Parameter.OVEN_POWER_CONSUMPTION);
-        powerConsumption = Double.parseDouble(pCons);
-        String w = parameters.get(Parameter.OVEN_WEIGHT);
-        weight = Double.parseDouble(w);
-        String cap = parameters.get(Parameter.OVEN_CAPACITY);
-        capacity = Double.parseDouble(cap);
-        String d = parameters.get(Parameter.OVEN_DEPTH);
-        depth = Double.parseDouble(d);
-        String h = parameters.get(Parameter.OVEN_HEIGHT);
-        height = Double.parseDouble(h);
-        String wid = parameters.get(Parameter.OVEN_WIDTH);
-        width = Double.parseDouble(wid);
     }
 
     public Type getType() {
