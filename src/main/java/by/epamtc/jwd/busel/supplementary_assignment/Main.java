@@ -10,7 +10,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //There must be some logic of inputting and generating of search params instead of the following code
+        /*There must be some logic of inputting and generating of search params
+         instead of the following code*/
         Appliance.Type inputType = Appliance.Type.OVEN; // START
         List<String> queryParams = new ArrayList<>();
         String inputParameterKey1 = Parameter.OVEN_DEPTH;
