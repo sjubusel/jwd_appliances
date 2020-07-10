@@ -10,6 +10,9 @@ public class LineValidator {
         for (String parameter : queryParameters) {
             int nextCharIndex = line.indexOf(parameter) + parameter.length();
             isContainable = isNextCharAppropriate(line, nextCharIndex);
+            if (!isContainable) {
+                break;
+            }
         }
         return isContainable;
     }
